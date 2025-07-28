@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ETicaretAPI.Persistence;
 
 namespace ETicaretApi.Persistence
 {
@@ -13,7 +14,7 @@ namespace ETicaretApi.Persistence
     {
         public static void AddPersistenceServices(this IServiceCollection services)
         {
-            services.AddDbContext<ETicaretApiDbContext>(options => options.UseNpgsql());
+            services.AddDbContext<ETicaretApiDbContext>(options => options.UseNpgsql(Configuration.ConnectionString));
         }
     }
 }
