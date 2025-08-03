@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { Header } from "./header/header";
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { Sidebar } from "./sidebar/sidebar";
+import { Header } from "./header/header";
 import { Footer } from "./footer/footer";
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet } from "@angular/router";
 
 @Component({
   selector: 'app-layout',
-  imports: [Header, Sidebar, Footer, RouterOutlet],
+  imports: [MatSidenavModule, Sidebar, Header, Footer, RouterOutlet],
   templateUrl: './layout.html',
   styleUrl: './layout.scss'
 })
