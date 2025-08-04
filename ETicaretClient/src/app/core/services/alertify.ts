@@ -9,7 +9,7 @@ export enum MessageType {
   Notify = "notify"
 }
 
-export enum PositionType{
+export enum PositionType {
   TopLeft = "top-left",
   TopCenter = "top-center",
   TopRight = "top-right",
@@ -18,7 +18,7 @@ export enum PositionType{
   BottomRight = "bottom-right"
 }
 
-export class AlertifyOptions{
+export class AlertifyOptions {
   messageType: MessageType = MessageType.Message;
   position: PositionType = PositionType.BottomRight;
   delay: number = 3;
@@ -35,9 +35,9 @@ export class Alertify {
   message(message: string, options: Partial<AlertifyOptions>) {
     // ["success"]() = alertify.success()
     const alert = alertify[options.messageType](message);
-    alert.set('notifier','position', options.position);
-    alert.set('notifier','delay', options.delay);
-    if(options.dismissOther)
+    alert.set('notifier', 'position', options.position);
+    alert.set('notifier', 'delay', options.delay);
+    if (options.dismissOther)
       alert.dismissOther();
   }
 }
